@@ -16,6 +16,7 @@
     <description>my-spring</description>
     <modules>
         <module>my-FactoryBean</module>
+        <module>my-flyway</module>
     </modules>
 
     <properties>
