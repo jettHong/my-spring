@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: flyway
+    datasource:
+        name: defaultDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3308/flyway?serverTimezone=UTC
+        password: root
+        username: root
+    flyway:
+        # 是否启用flyway
+        enabled: true
+        # 当迁移发现数据库非空且存在没有元数据的表时，自动执行基准迁移，新建schema_version表
+        baseline-on-migrate: true
+        # 占位符替换（如sql脚本中有插入的数据为 ${XXX} 这样的数据）
+        placeholder-replacement: true
+        # SQL脚本内容占位符前缀
+        placeholder-prefix: $${
+        # 占位符-变量
+        placeholders:
+            biz_table_name: user
+            biz_view_name: view_user_000000
