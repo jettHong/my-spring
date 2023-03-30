@@ -10,8 +10,24 @@ spring:
     flyway:
         # 是否启用flyway
         enabled: true
+        # 禁止删除库！！！
+        clean-disabled: true
+        # 编码格式，默认UTF-8
+        encoding: UTF-8
+        # 迁移sql脚本文件存放路径，默认db/migration
+        locations: classpath:db/migration
+        # 迁移sql脚本文件名称的前缀，默认V
+        sql-migration-prefix: V
+        # 迁移sql脚本文件名称的分隔符，默认2个下划线__
+        sql-migration-separator: __
+        # 迁移sql脚本文件名称的后缀
+        sql-migration-suffixes: .sql
+        # 迁移时是否校验（即checksum是否与库对应），默认为true
+        validate-on-migrate: true
         # 当迁移发现数据库非空且存在没有元数据的表时，自动执行基准迁移，新建schema_version表
         baseline-on-migrate: true
+        # 是否允许无序的迁移（允许中间补入脚本），默认false
+        out-of-order: true
         # 占位符替换（如sql脚本中有插入的数据为 ${XXX} 这样的数据）
         placeholder-replacement: true
         # SQL脚本内容占位符前缀
