@@ -17,7 +17,6 @@
     <modules>
         <module>my-FactoryBean</module>
         <module>my-flyway</module>
-        <module>my-frame</module>
     </modules>
 
     <properties>
